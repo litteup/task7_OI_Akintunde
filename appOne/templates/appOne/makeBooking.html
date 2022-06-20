@@ -1,0 +1,80 @@
+
+
+{% extends 'appOne/base.html' %}
+
+
+{% block title%}
+      <title>Make Booking Reservations </title>
+    {% endblock title%}
+
+
+
+
+{% block body %}
+<!--
+   <center><div class="container"><h1>Customer Booking Details</h1></div></center><br><br>
+	<form method="POST">
+		<div>
+			<table class="container">
+			{{ form.as_table }}
+			{% csrf_token %}
+
+		</table>
+		
+		<center><input type="submit" name="" value="Book"class="btn btn-dark btn-lg"></center>
+		</div>
+		<h3> Date format: YYYY-MM-DD</h3>
+		
+
+	</form>
+	-->
+	<div class="container">
+		<h2 class="text-center my-3"> Input New Number</h2>
+		<form action="" class="" method="post">
+		  {% csrf_token %}
+	  
+		  <div class="mb-3">
+			<label for="name" class="form-label">First Name</label>
+			<input type="text" class="form-control" id ="occupant_first_name" name="occupant_first_name" >
+		  </div>
+		  <div class="mb-3">
+			<label for="name">Last Name</label>
+			<input type="text" class="form-control" id ="occupant_last_name" name ="occupant_last_name">
+		  </div>
+		  <div class="mb-3">
+			<label for="name">Occupation</label>
+			<input type="text" class="form-control" id ="occupant_occupation" name="occupant_occupation" >
+		  </div>
+		  <div class="mb-3">
+			<label for="email">Email</label>
+			<input type="email" class="form-control" id ="occupant_email" name ="occupant_email" >
+		  </div>
+		  <div class="mb-3">
+			<label for="name">Room Number</label>
+			<input type="text" class="form-control" id ="room_number" name="room_number" >
+		  </div>
+		  <div class="mb-3">
+			<label for="name">Amount Paid</label>
+			<input type="floatformat" class="form-control" id ="amount_paid" name="amount_paid" >
+		  </div>
+		  <div class="mb-3">
+			<label for="name">Number of Nights</label>
+			<input type="text" class="form-control" id ="number_of_night" name="number_of_night" >
+		  </div>
+		  <div class="mb-3">
+			<label for="name"> Start Date </label>
+			<input type="date" class="form-control" id ="start_date" name="start_date" >
+		  </div>
+		  <div class="mb-3">
+			<label for="name"> End Date </label>
+			<input type="date" class="form-control" id ="end_date" name="end_date" >
+		  </div>
+		  <div class="col-auto">
+		  <button type="submit" class="btn btn-primary">Save</button>
+		</div>
+	  
+		</form>
+	  
+	  </div>
+{% endblock body %}
+

@@ -1,0 +1,61 @@
+{% extends 'appOne/base.html' %}
+
+
+
+
+{% block title%}
+
+        <title>Home Page</title>
+
+{% endblock title%}
+
+{% block body %}
+    <div class = "container">
+        <h1>Welcome to XYZ Hotel</h1>
+    </div>
+    <br>
+    <br>
+
+    <div class = "container"> 
+        <br>
+        {% if messages %}
+           {% for message in messages  %}
+             <div class="alert alert-info "alert alert-warning alert-dismissible fade show"" role="alert">
+               {{message}}
+               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+               
+     
+         
+             </div>
+          
+           {% endfor %}
+        
+        {% endif %}
+
+
+   <h2>Select an action to perform below:</h2>
+
+   <hr>
+   <div class="container">
+       <ul>
+        <li><h3> <a href="/booking">Make Booking Reservation</a></h3></li>
+        <li><h3> <a href="/reservations">Check Reservations</a></h3></li>
+    </ul>
+        
+   </div>
+   <hr>
+    
+        
+{% endblock body %}
+
+
+
+
+
+
+      
+        
+
+        <script src="" async defer></script>
+    </body>
+</html>

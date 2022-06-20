@@ -1,0 +1,60 @@
+
+
+{% extends 'appOne/base.html' %}
+
+
+{% block title %}
+
+	<title>Reservations Page</title>
+
+{% endblock title %}
+
+
+
+{% block body %}
+   {% if booked_rooms %}
+   <div class="container table-responsive">
+		<caption><center> <hr> <h2>List of Reservations Already Made</h2> <hr> </center></caption>
+   		<table class="table table-borderless table-sm border-secondary table align-middle">
+
+		<thead class="table-secondary">
+			<th> Serial Number </th>
+			<th> First Name </th>
+			<th> Last Name </th>
+			<th> Occupant Occupation </th>
+			<th> Email </th>
+			<th> Room Number</th>
+			<th> Amount Paid</th>
+			<th> Number of Nights</th>
+			<th> Start Date </th>
+			<th> End Date </th>
+			
+		</thead>
+		{% for booked_room in booked_rooms %}
+
+			<tr>
+				<td> {{booked_room.id}}</td>
+				<td> {{booked_room.occupant_first_name}}</td>
+				<td> {{booked_room.occupant_last_name}}</td>
+				<td> {{booked_room.occupant_occupation}}</td>
+				<td> {{booked_room.occupant_email}}</td>
+				<td> {{booked_room.room_number }}</td>
+				<td> {{booked_room.amount_paid }}</td>
+				<td> {{booked_room.number_of_night}}</td>
+				<td> {{booked_room.start_date}}</td>
+				<td> {{booked_room.end_date}}</td>
+				
+			</tr>
+		{% endfor %}
+	</table>
+   </div>
+	
+	{% else %}
+		<p> No reservation found!</p>
+	{% endif %}
+
+{% endblock body %}
+
+
+
+
